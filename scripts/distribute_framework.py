@@ -65,7 +65,7 @@ def distribute():
                     src_file = os.path.join(source_item_path, file_name)
                     tgt_file = os.path.join(target_item_path, file_name)
                     
-                    if file_name in ["CONTEXT.md", "MAP.md"] and os.path.exists(tgt_file):
+                    if os.path.exists(tgt_file):
                         print(f"   ℹ️  Conservando {file_name} existente en {subdir}")
                     else:
                         shutil.copy2(src_file, tgt_file)
