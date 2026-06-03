@@ -15,15 +15,18 @@ Este repositorio contiene la arquitectura de referencia, la infraestructura base
 
 Para incorporar este agente a cualquier proyecto nuevo del ecosistema, sigue estos pasos:
 
-### 1. Clonar e Inicializar la Estructura Cognitiva (ECC Harness)
-Puedes copiar la estructura manualmente o utilizar la configuración de arnés de ECC provista en `.claudecode.json` para clonar la estructura `.agent/` a la raíz de tu proyecto:
+### 1. Clonar e Inicializar la Estructura Cognitiva y Heurística (ECC Harness)
+La heurística y la inteligencia artificial son partes fundamentales del ciclo de vida de todo proyecto generado a partir de este framework. Para inicializar un nuevo proyecto, ejecuta el comando de arnés o copia la estructura `.agent/` de forma mandatoria:
 - `.agent/AGENT.md` (Las Leyes de tu Agente)
 - `.agent/CONTEXT.md` (El propósito de tu proyecto)
 - `.agent/MAP.md` (El mapa de puertos y directorios)
 - `.agent/STATE.md` (La bitácora de sesión)
 - `.agent/RULES.md` (Las reglas de flujo y hooks de sistema de ECC)
-- `.agent/HEURISTICS.md` (La heurística y guías de decisión de la IA)
+- `.agent/HEURISTICS.md` (La heurística y guías de decisión de la IA para autogestión de código)
 - `resident_agent_genesis.md` (Manual Maestro de Operaciones en la raíz del proyecto)
+
+> [!IMPORTANT]
+> **Heurística Mandatoria:** Todo proyecto derivado debe configurar al arnés del agente para leer e incorporar `HEURISTICS.md` antes de tomar cualquier decisión de diseño o modificación en el código del nuevo proyecto.
 
 ### 2. Levantar la Infraestructura Soberana de Memoria (Valkey + Postgres)
 Copia el archivo `docker-compose.yml` en la raíz de tu proyecto y levanta las bases de datos locales:
