@@ -1,6 +1,6 @@
 # 🌌 Resident Agent Framework: Master Blueprint (MIT License)
 
-Este repositorio contiene la arquitectura de referencia, la infraestructura base y la lógica de control cognitivo para inicializar un **Agente Residente** con soberanía de datos local, memoria de corto plazo (**Valkey**) y memoria de largo plazo (PostgreSQL + pgvector), integrando las pautas de control cognitivo **ECC (Embedded Cognitive Control)**.
+Este repositorio contiene la arquitectura de referencia, la infraestructura base y la lógica de control cognitivo para inicializar un **Agente Residente** con soberanía de datos local, memoria de corto plazo (**Valkey**) y memoria de largo plazo (PostgreSQL + pgvector), integrando las pautas de control cognitivo y arnés de desarrollo de **affaan-m/ECC (Agent Harness Optimization)**.
 
 ---
 
@@ -15,12 +15,13 @@ Este repositorio contiene la arquitectura de referencia, la infraestructura base
 
 Para incorporar este agente a cualquier proyecto nuevo del ecosistema, sigue estos pasos:
 
-### 1. Clonar e Inicializar la Estructura Cognitiva
-Copia la carpeta `.agent/` a la raíz de tu proyecto. Asegúrate de definir la estructura inicial en la raíz del nuevo desarrollo:
+### 1. Clonar e Inicializar la Estructura Cognitiva (ECC Harness)
+Puedes copiar la estructura manualmente o utilizar la configuración de arnés de ECC provista en `.claudecode.json` para clonar la estructura `.agent/` a la raíz de tu proyecto:
 - `.agent/AGENT.md` (Las Leyes de tu Agente)
 - `.agent/CONTEXT.md` (El propósito de tu proyecto)
 - `.agent/MAP.md` (El mapa de puertos y directorios)
 - `.agent/STATE.md` (La bitácora de sesión)
+- `.agent/RULES.md` (Las reglas de flujo y hooks de sistema de ECC)
 - `resident_agent_genesis.md` (Manual Maestro de Operaciones en la raíz del proyecto)
 
 ### 2. Levantar la Infraestructura Soberana de Memoria (Valkey + Postgres)
@@ -32,7 +33,7 @@ docker compose up -d
 > Esto creará las carpetas `./data/valkey` y `./data/postgres` en tu host. Los datos persistirán de forma segura incluso si eliminas los contenedores. Valkey reemplaza por completo a Redis para toda la gestión de caché semántica y estados de sesión de corto plazo.
 
 ### 3. Ejecutar el Rito de Inicio (Bootstrapping)
-Al iniciar tu sesión de desarrollo, tu agente debe leer `.agent/STATE.md` para sincronizarse con los pendientes de la sesión anterior.
+Al iniciar tu sesión de desarrollo, tu agente debe leer `.agent/STATE.md` y verificar las reglas en `.agent/RULES.md` para sincronizarse con los pendientes de la sesión anterior.
 
 ### 4. Integrar la Memoria Corta (Caché Semántica en Valkey)
 Utiliza la clase `SemanticCache` para evitar llamadas redundantes a las APIs de modelos de lenguaje, comparando la similitud semántica de la consulta:
