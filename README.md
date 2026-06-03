@@ -1,6 +1,9 @@
 # 🌌 Resident Agent Framework: Master Blueprint (MIT License)
 
-Este repositorio contiene la arquitectura de referencia, la infraestructura base y la lógica de control cognitivo para inicializar un **Agente Residente** con soberanía de datos local, memoria de corto plazo (**Valkey**) y memoria de largo plazo (PostgreSQL + pgvector), integrando las pautas de control cognitivo y arnés de desarrollo de **affaan-m/ECC (Agent Harness Optimization)**.
+Este repositorio contiene la arquitectura de referencia, la infraestructura base y la lógica de control cognitivo para inicializar un **Agente Residente** con soberanía de datos local, memoria de corto plazo (**Valkey**) y memoria de largo plazo (PostgreSQL + pgvector).
+
+> [!NOTE]
+> **Atribución y Licenciamiento:** Este proyecto se inspira fuertemente e incorpora las mejores prácticas, estructuras de subagentes, hooks y patrones de arnés del proyecto de código abierto [affaan-m/ECC](https://github.com/affaan-m/ECC), el cual se distribuye bajo la Licencia MIT. Agradecemos a los contribuidores de ECC por sentar las bases del desarrollo orientado a arneses nativos de IA.
 
 ---
 
