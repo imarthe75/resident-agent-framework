@@ -22,11 +22,14 @@ La heurística y la inteligencia artificial son partes fundamentales del ciclo d
 - `.agent/MAP.md` (El mapa de puertos y directorios)
 - `.agent/STATE.md` (La bitácora de sesión)
 - `.agent/RULES.md` (Las reglas de flujo y hooks de sistema de ECC)
-- `.agent/HEURISTICS.md` (La heurística y guías de decisión de la IA para autogestión de código)
+- `.agent/HEURISTICS.md` (La heurística cognitivo-aplicada y guías de decisión de la IA)
 - `resident_agent_genesis.md` (Manual Maestro de Operaciones en la raíz del proyecto)
 
 > [!IMPORTANT]
-> **Heurística Mandatoria:** Todo proyecto derivado debe configurar al arnés del agente para leer e incorporar `HEURISTICS.md` antes de tomar cualquier decisión de diseño o modificación en el código del nuevo proyecto.
+> **Heurística Mandatoria (Guía + Código):** 
+> Todo proyecto derivado debe:
+> 1. Configurar al arnés del agente para leer e incorporar `HEURISTICS.md` antes de tomar cualquier decisión de diseño o modificación.
+> 2. **Implementar heurística dentro de la lógica del desarrollo o aplicación** (ej. algoritmos heurísticos para procesamiento rápido de datos, sistemas de fallback locales y priorización autorregulada de tareas sin depender exclusivamente de llamadas de IA externas).
 
 ### 2. Levantar la Infraestructura Soberana de Memoria (Valkey + Postgres)
 Copia el archivo `docker-compose.yml` en la raíz de tu proyecto y levanta las bases de datos locales:
