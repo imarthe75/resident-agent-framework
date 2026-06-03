@@ -13,15 +13,17 @@ resident-agent-framework/
 │   ├── STATE.md        # Estado actual y bitácora del agente
 │   └── HEURISTICS.md   # Heurística cognitiva y toma de decisiones por IA
 ├── DECISIONS/
-│   └── 0001-genesis.md # ADRs de decisiones arquitectónicas
+│   ├── 0001-genesis.md            # ADR de decisiones arquitectónicas iniciales
+│   └── 0002-heuristics-mandate.md # ADR de adopción obligatoria de heurísticas
 ├── memory/
-│   ├── semantic_cache.py     # Lógica de caché semántica con Valkey
-│   ├── long_term_memory.py   # Lógica de embeddings con pgvector en Postgres
-│   └── agent_state.py        # Grafo de memoria interactiva (LangGraph)
+│   ├── semantic_cache.py          # Lógica de caché semántica con Valkey
+│   ├── long_term_memory.py        # Lógica de embeddings con pgvector en Postgres
+│   └── agent_state.py             # Grafo de memoria interactiva (LangGraph)
 ├── skills/
-│   └── example_mcp_skill.py  # Plantilla de herramientas MCP integradas
-├── docker-compose.yml        # Orquestación de infraestructura local
-└── README.md                 # Guía de inicio rápido para desarrolladores
+│   └── example_mcp_skill.py       # Plantilla de herramientas MCP integradas
+├── docker-compose.yml             # Orquestación de infraestructura local
+├── HEURISTICAS_MASTER_GUIDE.md    # Guía Maestra de Heurísticas (Teoría y Práctica)
+├── README.md                      # Guía de inicio rápido para desarrolladores
 ```
 
 ## 🔋 Recursos del Host y Puertos
