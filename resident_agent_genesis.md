@@ -3,20 +3,21 @@ Este documento es el Manual Maestro de Operaciones. Su objetivo es transformar a
 
 🛠️ FASE 1: El Prompt Semilla (Inicialización)
 "Actúa como Principal AI Solutions Architect. Tu primera misión es construir tu propio Sistema Cognitivo antes de escribir código. Implementa la estructura bajo `.agent/` siguiendo estos pilares:
-1. Memoria Estática (.agent/): AGENT.md (Reglas), CONTEXT.md (Propósito) y MAP.md (Arquitectura técnica).
+1. Memoria Estática (.agent/): AGENT.md (Reglas), CONTEXT.md (Propósito), MAP.md (Arquitectura técnica) y HEURISTICS.md (Heurísticas Cognitivas y Aplicadas).
 2. Historial de Decisiones: Carpeta DECISIONS/ para ADRs numerados.
 3. Persistencia Local Obligatoria: Todos los servicios (Postgres, Valkey, SeaweedFS, Redpanda) deben configurarse para usar carpetas locales del host.
 4. Memoria Operativa (Valkey/AMS): Integra el Agent Memory Server con Valkey para caché y estados (Semantic Caching).
 5. Conocimiento Semántico (PostgreSQL + pgvector): Centraliza la búsqueda semántica local. Prohibido VectorDBs externas.
 6. Capacidad de Acción (MCP): Configura `.mcp/config.json` para permisos de sistema."
 
-📈 FASE 2: La Triple Capa de Memoria
+📈 FASE 2: La Triple Capa de Memoria y Heurística de Código
 1. Capa Documental: .agent/AGENT.md (La Ley: tipado estricto, UUID v7) y el Mandato de Soberanía: "Los datos residen en el host".
 2. Capa Operativa (Valkey): Gestión de estados de sesión y colas de tareas asíncronas. Implementa Semantic Caching.
 3. Capa Semántica (Postgres): Long-term Memory y almacenamiento de embeddings de lecciones aprendidas.
+4. Heurística de Aplicación: Todo desarrollo generado a partir de este framework debe incorporar de forma obligatoria lógica heurística en su propia estructura de código para optimizar recursos y flujos de fallback locales.
 
 🔄 FASE 3: Ciclo de Vida y Mantenimiento (Ritos Obligatorios)
-- Rito de Inicio (Bootstrapping): "Lee tu estado en .agent/STATE.md. Sincroniza con el AMS y verifica que los montajes de las carpetas locales de datos sean correctos. Confirma cuando estés listo."
+- Rito de Inicio (Bootstrapping): "Lee tu estado en .agent/STATE.md, consulta tus heurísticas en .agent/HEURISTICS.md, sincroniza con el AMS y verifica que los montajes de las carpetas locales de datos sean correctos. Confirma cuando estés listo."
 - Rito de Cierre (Higiene de Memoria): 
     1. Ejecuta Summarization: Condensa la actividad y lecciones del día.
     2. Actualiza .agent/STATE.md: Resume archivos tocados, errores resueltos y próximos pasos.
