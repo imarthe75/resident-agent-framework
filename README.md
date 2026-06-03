@@ -73,3 +73,19 @@ Al terminar tu sesión, ejecuta el proceso de control cognitivo:
 - **Summarization**: Condensa la actividad y lecciones.
 - **Bitácora**: Actualiza `.agent/STATE.md` documentando los cambios y los siguientes pasos.
 - **Persistencia**: Almacena las lecciones de la sesión en la base de datos local mediante embeddings.
+
+---
+
+## 🗄️ 7. Gobernanza de Bases de Datos & Estilo SQL
+
+El framework incorpora un sistema estricto de gobernanza de base de datos detallado en las [Database Style Guidelines](file:///home/ia/ecosistema-casmarts/resident-agent-framework/rules/common/database-style.md).
+
+### 🛠️ Estructura de Auditoría (auditoria.sql)
+Para habilitar el rastreo transaccional de DML (INSERT/UPDATE/DELETE), se provee el script modular [auditoria.sql](file:///home/ia/ecosistema-casmarts/resident-agent-framework/auditoria.sql), el cual:
+- Crea el esquema central `auditoria` y su correspondiente `log_auditoria` con almacenamiento en formato JSONB.
+- Registra el trigger `auditoria_biu` para automatizar fechas (`fccreacion`, `fcmodificacion`), control de concurrencia optimista (`row_version`), y claves estables (`ref` usando UUIDv7 con fallback a `gen_random_uuid()`).
+- Registra el trigger `auditoria_aiud` para loguear deltas con hashes de verificación de integridad (md5).
+
+### 🕵️ Automatización con el Skill de Auditoría
+El framework incluye el skill [postgres-audit-setup](file:///home/ia/ecosistema-casmarts/resident-agent-framework/skills/postgres-audit/SKILL.md) para guiar al agente de forma interactiva en la creación de las tablas, validación de esquemas y asignación idempotente de triggers en cualquier proyecto derivado.
+
