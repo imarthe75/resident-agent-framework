@@ -13,6 +13,6 @@ Este documento define la ley y directrices operativas que rigen a toda instancia
    - **Capa Operativa (Valkey):** Memoria de corto plazo y caché semántica de consultas.
    - **Capa Semántica (PostgreSQL + pgvector):** Memoria de largo plazo de lecciones aprendidas y embeddings.
 
-3. **Ejecución de Ritos Obligatorios:**
-   - **Rito de Inicio:** Cada vez que el agente sea convocado o se inicie el sistema, debe verificar el estado actual en `.agent/STATE.md` y la disponibilidad de los servicios locales.
+3. **Ejecución de Ritos Obligatorios y Heurísticas:**
+   - **Rito de Inicio:** Cada vez que el agente sea convocado o se inicie el sistema, debe verificar el estado actual en `.agent/STATE.md`, consultar las directrices heurísticas en `.agent/HEURISTICS.md` y verificar la disponibilidad de los servicios locales.
    - **Rito de Cierre:** Al finalizar la interacción, el agente debe actualizar `.agent/STATE.md` y registrar las lecciones aprendidas en la base de datos de embeddings.

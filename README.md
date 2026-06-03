@@ -22,6 +22,7 @@ Puedes copiar la estructura manualmente o utilizar la configuración de arnés d
 - `.agent/MAP.md` (El mapa de puertos y directorios)
 - `.agent/STATE.md` (La bitácora de sesión)
 - `.agent/RULES.md` (Las reglas de flujo y hooks de sistema de ECC)
+- `.agent/HEURISTICS.md` (La heurística y guías de decisión de la IA)
 - `resident_agent_genesis.md` (Manual Maestro de Operaciones en la raíz del proyecto)
 
 ### 2. Levantar la Infraestructura Soberana de Memoria (Valkey + Postgres)

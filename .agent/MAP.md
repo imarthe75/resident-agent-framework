@@ -10,7 +10,8 @@ resident-agent-framework/
 │   ├── AGENT.md        # Leyes y reglas del agente
 │   ├── CONTEXT.md      # Propósito y tecnologías enlazadas
 │   ├── MAP.md          # Este mapa técnico
-│   └── STATE.md        # Estado actual y bitácora del agente
+│   ├── STATE.md        # Estado actual y bitácora del agente
+│   └── HEURISTICS.md   # Heurística cognitiva y toma de decisiones por IA
 ├── DECISIONS/
 │   └── 0001-genesis.md # ADRs de decisiones arquitectónicas
 ├── memory/
