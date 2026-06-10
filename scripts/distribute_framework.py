@@ -58,15 +58,17 @@ def distribute():
             if not os.path.exists(source_item_path):
                 continue
                 
-            # Tratamiento especial para CONTEXT.md y MAP.md para no borrar información de proyectos específicos
+            # Tratamiento especial para no borrar información de proyectos específicos
             if item == ".agent":
                 os.makedirs(target_item_path, exist_ok=True)
                 for file_name in os.listdir(source_item_path):
                     src_file = os.path.join(source_item_path, file_name)
                     tgt_file = os.path.join(target_item_path, file_name)
                     
-                    if os.path.exists(tgt_file):
-                        print(f"   ℹ️  Conservando {file_name} existente en {subdir}")
+                    # Conservar solo los archivos que tienen personalización única del proyecto
+                    project_specific_files = {"CONTEXT.md", "MAP.md", "STATE.md", "SPECS.md"}
+                    if file_name in project_specific_files and os.path.exists(tgt_file):
+                        print(f"   ℹ️  Conservando {file_name} de proyecto existente en {subdir}")
                     else:
                         shutil.copy2(src_file, tgt_file)
             else:

@@ -1,6 +1,6 @@
 services:
   valkey:
-    image: valkey/valkey:latest
+    image: valkey/valkey:8
     container_name: resident-valkey-cache
     ports:
       - "6379:6379"
@@ -14,7 +14,7 @@ services:
           memory: 512M
 
   postgres:
-    image: pgvector/pgvector:pg16
+    image: pgvector/pgvector:pg18
     container_name: resident-postgres-memory
     ports:
       - "5432:5432"
@@ -29,3 +29,23 @@ services:
       resources:
         limits:
           memory: 1G
+
+  resident-ui:
+    build:
+      context: ./resident-ui
+      dockerfile: Dockerfile
+    container_name: resident-ui-dashboard
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./resident-ui:/app
+      - /app/node_modules
+      - ./.agent:/app/.agent
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - valkey
+      - postgres
+    restart: always
+

@@ -24,6 +24,8 @@ La heurística y la inteligencia artificial son partes fundamentales del ciclo d
 - `.agent/CONTEXT.md` (El propósito de tu proyecto)
 - `.agent/MAP.md` (El mapa de puertos y directorios)
 - `.agent/STATE.md` (La bitácora de sesión)
+- `.agent/SPECS.md` (La capa de especificaciones persistente de OpenSpec)
+- `.agent/SYSTEM_PROMPT.md` (El prompt del sistema cognitivo integrado v3)
 - `.agent/RULES.md` (Las reglas de flujo y hooks de sistema de ECC)
 - `.agent/HEURISTICS.md` (La heurística cognitivo-aplicada y guías de decisión de la IA)
 - `resident_agent_genesis.md` (Manual Maestro de Operaciones en la raíz del proyecto)

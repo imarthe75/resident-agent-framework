@@ -15,10 +15,12 @@ class LongTermMemory:
         with self.conn.cursor() as cur:
             # Habilitar extensión de pgvector en la DB local
             cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
-            # Tabla de lecciones
+            # Crear esquema memory
+            cur.execute("CREATE SCHEMA IF NOT EXISTS memory;")
+            # Tabla de lecciones — uuidv7() nativo en PG 18+ (usar gen_random_uuid() en PG ≤ 17)
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS memory.lessons (
-                    id BIGSERIAL PRIMARY KEY,
+                    id UUID PRIMARY KEY DEFAULT uuidv7(),
                     content TEXT NOT NULL,
                     embedding vector(1536), -- Soporte estándar para embeddings de OpenAI/Aura
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
